@@ -1,0 +1,177 @@
+Dataset: train.csv
+
+
+
+Total Columns: 12
+
+Total Rows: 891
+
+
+
+Columns Name: 
+
+	1.PassengerId 
+
+	2.Survived 
+
+	3.Pclass 
+
+	4.Name 
+
+	5.Sex 
+
+	6.Age 
+
+	7.SibSp
+
+	8.Parch 
+
+	9.Ticket 
+
+	10.Fare 
+
+	11.Cabin 
+
+	12.Embarked	
+
+
+
+Columns Type:
+
+	String: 
+		
+		1. Name
+
+
+
+	Numerical:
+
+		1.PassengerId: datatype: Int64  #Id is continuous from 1 to 891  #No Duplicacy #No Null value  
+
+		2.Age:Int64  **177 Null Values**       #min age = 0.42 means approx. 5 months #max age = 80 yrs
+
+		3.SibSp:Int64  #No Null value
+
+		4.Parch:Int64 
+
+		5.Fare:Int64   #No Null value  #min value: 0 #max value = 512.3292
+
+
+
+	Categorical:
+
+		1.Survived: datatype: Int64, contains two categories 0 and 1. 549 Values fall under category 0, 342 Values fall under category 1. 
+
+           		    0 means Couldn't survive and 1 means Succeed to survive    #No Null values
+
+
+
+		2.Pclass:  datatype: Int64, contains three categories 1 and 2 and 3. 419 Values fall under category 3, 184 Values fall under category 2, 216 Values fall under category 1.
+
+	      		   #No Null value
+
+
+
+		3.Sex: male, female   #No Null values  #male      577    #female    314
+
+
+
+		4.Embarked: contains 3 Categories C, S, Q. under C category 168 values fall. under S category 644 values fall. under Q category 77 values fall 
+            
+	    		   ** 2 null values
+	    		   trn[trn["Embarked"].isnull()] showing that Passenger Id 62 and 830 with same ticket no and same cabin has null value for Embarked
+            
+	Mixed:
+  
+		1.Ticket : trn["Ticket"].value_counts()    #This is showing that how many passengers were travelling togehter as a family
+           	
+			   trn[trn["Ticket"] == "349909"]  #This is showing details of passengers belong to same family, we can find out this for every ticket
+
+		2.Cabin : **687 Null Values**
+
+
+
+
+
+
+
+
+
+Dataset: test.csv
+
+
+
+Total Columns: 11
+
+Total Rows: 418
+
+
+
+Columns Name: Same as train.csv, only column named "Survived" is not present in this dataset.
+          
+	Columns Name: 
+
+	1.PassengerId  
+
+	2.Pclass 
+
+	3.Name 
+
+	4.Sex 
+
+	5.Age 
+
+	6.SibSp
+
+	7.Parch 
+
+	8.Ticket 
+
+	9.Fare 
+
+	10.Cabin 
+
+	11.Embarked	
+
+
+Columns Type:
+
+	String: 
+	
+		1. Name    #No duplicate #No Null
+
+
+
+	Numerical:
+
+		1.PassengerId: datatype: Int64 #Id is continuous from 892 to 1309 #No null values #No duplicacy
+
+		2.Age:Int64  # 86 null values   #min age 0.17 #max age 76
+
+		3.SibSp:Int64   #No null value
+
+		4.Parch:Int64   #No null values
+
+		5.Fare:Int64   # 1 null value 
+
+	Categorical:
+
+
+		1.Pclass:  datatype: Int64, contains three categories 1 and 2 and 3. #No Null value
+
+
+		2.Sex: male, female  #No null value # male      266    female    152
+
+
+		3.Embarked: # No null values contains 3 Categories C, S, Q. S:270 C:102 Q:46	    		               
+	Mixed:
+  
+		1.Ticket : # No null value # duplicacy
+		
+		2.Cabin : 327 null values
+
+
+
+
+
+
