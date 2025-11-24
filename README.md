@@ -1,1 +1,1 @@
-# Internship_EDA_Titanic
+# EDA_Titanic
